@@ -31,10 +31,17 @@ likeHandler = (index) => {
   if(!this.state.likedBeer.includes(index)) {
   this.setState({likedBeer: [...this.state.likedBeer, index]})
   } else {
-    let copy = this.state.likedBeer
-    copy.splice(index, 1)
+    let copy = [...this.state.likedBeer]
+    console.log("copy", copy)
+       if(copy.length === 1) {
+      copy.length = 0;
+     } else {
+       // splice the index for liked beers, NOT the index from the original beer list stored in liked beers
+       copy.splice(copy.indexOf(index), 1)
+        console.log(index)
+      }
     this.setState({likedBeer: [...copy]})
-  }
+     } 
 }
 
 render() {
@@ -46,7 +53,7 @@ render() {
             <BeerCard key={index} name={beer.name} image_url={beer.image_url} tagline={beer.tagline}
             first_brewed ={beer.first_brewed} description={beer.description} abv={beer.abv}
             index={index} like={this.likeHandler} 
-            isliked={this.state.likedBeer.includes(index) ? true : false}/>
+            isLiked={this.state.likedBeer.includes(index) ? true : false}/>
           )
         })}</ol>
       </header>

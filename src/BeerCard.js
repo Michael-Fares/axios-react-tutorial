@@ -2,9 +2,6 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
 
-import {useState} from 'react';
-
-
 function BeerCard(props) {
     const {name, tagline, first_brewed, description, image_url, abv, index, like, isLiked} = props
     return (
@@ -30,11 +27,12 @@ function BeerCard(props) {
             <h4>{tagline}</h4>
             <p style={{fontSize: "15px", textAlign: "left"}}><span style={{marginRight: "30px", color: "red"}}>{abv}% ABV</span>{description}</p>
            
-            <FontAwesomeIcon color={isLiked ? 'red' : 'grey'} icon={faHeart} style={{
+            <FontAwesomeIcon className={`${isLiked ? "heart-red" : "heart-grey"}`} icon={faHeart} style={{
                 position:"absolute",
                 right: "20px",
-                bottom: "10px",
-                cursor: "pointer"
+                top: "10px",
+                cursor: "pointer",
+                fontSize: "40px"
                 }} onClick={() => {like(index)}} />
                   
             </div>
