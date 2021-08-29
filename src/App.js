@@ -25,6 +25,13 @@ componentDidMount() {
     })
 }
 
+likeHandler = (index) => {
+  console.log("was clicked", index)
+  let arrayOfBeerCopy = this.state.arrayOfBeer
+  let likedBeers = arrayOfBeerCopy.filter((beer, beerIndex) => beerIndex === index)
+  // console.log(likedBeers, index)
+  this.setState({likedBeers: [...likedBeers]})
+}
 
 render() {
   return (
@@ -33,7 +40,8 @@ render() {
         <ol>{this.state.arrayOfBeer.map((beer, index) => {
           return (
             <BeerCard key={index} name={beer.name} image_url={beer.image_url} tagline={beer.tagline}
-            first_brewed ={beer.first_brewed} description={beer.description} abv={beer.abv}/>
+            first_brewed ={beer.first_brewed} description={beer.description} abv={beer.abv}
+            index={index} like={this.likeHandler}/>
           )
         })}</ol>
       </header>

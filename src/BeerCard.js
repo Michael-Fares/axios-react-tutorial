@@ -4,7 +4,7 @@ import { faHeart } from '@fortawesome/free-solid-svg-icons'
 
 
 function BeerCard(props) {
-    const {name, tagline, first_brewed, description, image_url, abv, likeHandler} = props
+    const {name, tagline, first_brewed, description, image_url, abv, index, like} = props
     return (
         <li style={{ 
          listStyle: "none",
@@ -34,7 +34,7 @@ function BeerCard(props) {
                 bottom: "10px",
                 cursor: "pointer",
                 color: "lightslategrey"
-                }} onClick={likeHandler}/>
+                }} onClick={() => {like(index)}} />
                   
             </div>
         </li>
