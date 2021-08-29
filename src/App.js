@@ -12,7 +12,8 @@ class App extends Component {
   super(props)
 
   this.state = {
-    arrayOfBeer: []
+    arrayOfBeer: [],
+    likedBeer: []
   }
 }
 
@@ -27,10 +28,13 @@ componentDidMount() {
 
 likeHandler = (index) => {
   console.log("was clicked", index)
-  let arrayOfBeerCopy = this.state.arrayOfBeer
-  let likedBeers = arrayOfBeerCopy.filter((beer, beerIndex) => beerIndex === index)
-  // console.log(likedBeers, index)
-  this.setState({likedBeers: [...likedBeers]})
+  if(!this.state.likedBeer.includes(index)) {
+  this.setState({likedBeer: [...this.state.likedBeer, index]})
+  } else {
+    let copy = this.state.likedBeer
+    copy.splice(index, 1)
+    this.setState({likedBeer: [...copy]})
+  }
 }
 
 render() {
@@ -41,7 +45,8 @@ render() {
           return (
             <BeerCard key={index} name={beer.name} image_url={beer.image_url} tagline={beer.tagline}
             first_brewed ={beer.first_brewed} description={beer.description} abv={beer.abv}
-            index={index} like={this.likeHandler}/>
+            index={index} like={this.likeHandler} 
+            isliked={this.state.likedBeer.includes(index) ? true : false}/>
           )
         })}</ol>
       </header>
