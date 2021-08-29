@@ -1,7 +1,10 @@
 import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHeart } from '@fortawesome/free-solid-svg-icons'
+
 
 function BeerCard(props) {
-    const {name, tagline, first_brewed, description, image_url, abv} = props
+    const {name, tagline, first_brewed, description, image_url, abv, likeHandler} = props
     return (
         <li style={{ 
          listStyle: "none",
@@ -9,7 +12,8 @@ function BeerCard(props) {
          padding: "10px",
          marginBottom: "5px",
          backgroundColor: "lightblue",
-         display: "flex"
+         display: "flex",
+         position: "relative"
         }}>
            
             <img style={{height: "200px" }} src={image_url} />
@@ -23,6 +27,15 @@ function BeerCard(props) {
             <h3 style={{color: "darkslategrey"}}>{name}<span style={{color: "green", marginLeft: "30px"}}>{first_brewed}</span></h3>
             <h4>{tagline}</h4>
             <p style={{fontSize: "15px", textAlign: "left"}}><span style={{marginRight: "30px", color: "red"}}>{abv}% ABV</span>{description}</p>
+           
+            <FontAwesomeIcon icon={faHeart} style={{
+                position:"absolute",
+                right: "20px",
+                bottom: "10px",
+                cursor: "pointer",
+                color: "lightslategrey"
+                }} onClick={likeHandler}/>
+                  
             </div>
         </li>
     )
