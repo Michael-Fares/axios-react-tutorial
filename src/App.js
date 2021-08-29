@@ -30,7 +30,8 @@ render() {
       <header className="App-header">
         <ol>{this.state.arrayOfBeer.map((beer, index) => {
           return (
-            <BeerCard key={index} name={beer.name} image_url={beer.image_url}/>
+            <BeerCard key={index} name={beer.name} image_url={beer.image_url} tagline={beer.tagline}
+            first_brewed ={beer.first_brewed} description={beer.description} abv={beer.abv}/>
           )
         })}</ol>
       </header>
