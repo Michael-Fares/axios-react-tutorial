@@ -9,10 +9,11 @@ function BeerCard(props) {
          listStyle: "none",
          border: "2px solid black", 
          padding: "10px",
-         marginBottom: "5px",
+         marginBottom: "20px",
          backgroundColor: "lightblue",
          display: "flex",
-         position: "relative"
+         position: "relative",
+         boxShadow: "2px 2px 2px black"
         }}>
            
             <img style={{height: "200px" }} src={image_url} />
