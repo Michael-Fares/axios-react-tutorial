@@ -47,7 +47,8 @@ likeHandler = (index) => {
 render() {
   return (
     <div className="App">
-      <header className="App-header">
+      <h1>Beer!</h1>
+      {/* <input placeholder="search by beer name" type="text"></input> */}
         <ol>{this.state.arrayOfBeer.map((beer, index) => {
           return (
             <BeerCard key={index} name={beer.name} image_url={beer.image_url} tagline={beer.tagline}
@@ -56,7 +57,6 @@ render() {
             isLiked={this.state.likedBeer.includes(index) ? true : false}/>
           )
         })}</ol>
-      </header>
     </div>
   );
 }

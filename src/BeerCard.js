@@ -13,7 +13,7 @@ function BeerCard(props) {
          backgroundColor: "lightblue",
          display: "flex",
          position: "relative",
-         boxShadow: "2px 2px 2px black"
+         boxShadow: "2px 2px 2px black",
         }}>
            
             <img style={{height: "200px" }} src={image_url} />
@@ -30,8 +30,9 @@ function BeerCard(props) {
            
             <FontAwesomeIcon className={`${isLiked ? "heart-red" : "heart-grey"}`} icon={faHeart} style={{
                 position:"absolute",
+                marginLeft: "20px",
                 right: "20px",
-                top: "10px",
+                top: "20px",
                 cursor: "pointer",
                 fontSize: "40px"
                 }} onClick={() => {like(index)}} />
