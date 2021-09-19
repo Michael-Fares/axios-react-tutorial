@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 
+import { Link } from 'react-router-dom'
+
 import './App.css';
 
 
@@ -48,6 +50,7 @@ render() {
   return (
     <div className="App">
       <h1>Beer!</h1>
+      <Link to="/home"><p>Go to home</p></Link>
       {/* <input placeholder="search by beer name" type="text"></input> */}
         <ol>{this.state.arrayOfBeer.map((beer, index) => {
           return (
