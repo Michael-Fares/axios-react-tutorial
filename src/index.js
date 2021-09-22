@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-import { BroswerRouter, BrowserRouter } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom'
 import Router from './Router'
 
 const Main = () => {
