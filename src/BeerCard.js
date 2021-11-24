@@ -7,13 +7,13 @@ function BeerCard(props) {
     return (
         <li style={{ 
          listStyle: "none",
-         border: "2px solid black", 
-         padding: "10px",
+         padding: "30px",
          marginBottom: "20px",
-         backgroundColor: "lightblue",
+         backgroundColor: "wheat",
          display: "flex",
          position: "relative",
-         boxShadow: "2px 2px 2px black",
+         boxShadow: "0 0 5px 5px rgba(0,0,0,.3)",
+         width: "50vw"
         }}>
            
             <img style={{height: "200px" }} src={image_url} />
@@ -26,7 +26,7 @@ function BeerCard(props) {
             }}>
             <h3 style={{color: "darkslategrey"}}>{name}<span style={{color: "green", marginLeft: "30px"}}>{first_brewed}</span></h3>
             <h4>{tagline}</h4>
-            <p style={{fontSize: "15px", textAlign: "left"}}><span style={{marginRight: "30px", color: "red"}}>{abv}% ABV</span>{description}</p>
+            <p className="serif" style={{fontSize: "15px", textAlign: "left"}}><span style={{marginRight: "30px", color: "red"}}>{abv}% ABV</span>{description}</p>
            
             <FontAwesomeIcon className={`${isLiked ? "heart-red" : "heart-grey"}`} icon={faHeart} style={{
                 position:"absolute",

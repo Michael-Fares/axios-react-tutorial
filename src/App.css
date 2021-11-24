@@ -3,9 +3,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-right: 30px;
+
 }
 
+body {
+  background-color: lightslategray;
+}
 
 
 .heart-grey {
@@ -14,5 +17,9 @@
 
 .heart-red {
   color: red;
+}
+
+.serif {
+  font-family: 'EB Garamond', serif;
 }
 

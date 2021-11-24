@@ -7,7 +7,7 @@ import Home from './Home'
 const Router = () => {
   return (
     <Switch>
-      <Route path="/home" component={Home}></Route>
+      <Route exact path="/" component={Home}></Route>
       <Route path="/app" component={App}></Route>
     </Switch>
   )

@@ -47,7 +47,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Beer!</h1>
-        <Link to="/home">
+        <Link to="/">
           <p>Go to home</p>
         </Link>
         {/* <input placeholder="search by beer name" type="text"></input> */}
