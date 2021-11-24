@@ -34,7 +34,7 @@ function BeerCard(props) {
                 right: "20px",
                 top: "20px",
                 cursor: "pointer",
-                fontSize: "40px"
+                fontSize: "25px"
                 }} onClick={() => {like(index)}} />
                   
             </div>

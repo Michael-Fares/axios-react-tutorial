@@ -1,13 +1,8 @@
 .App {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-}
-
-body {
-  background-color: lightslategray;
+  background: url('./beer.jpg') no-repeat center center fixed;
+  height: 100vh;
+  background-position: cover;
+  background-size: cover;
 }
 
 
@@ -20,6 +15,57 @@ body {
 }
 
 .serif {
-  font-family: 'EB Garamond', serif;
+  font-family: 'Outfit', sans-serif;
 }
 
+.title {
+  color: whitesmoke;
+  font-family: 'Lobster', cursive;
+  font-size: 3rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 1.5rem;
+}
+
+body {
+  background-color: darkslategray;
+  margin: 0;
+}
+
+.nav-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.link {
+  color: whitesmoke;
+  text-decoration: none;
+  margin-right: 1.5rem;
+  transition: ease-in 300ms;
+}
+
+.link:hover {
+  text-shadow: none;
+}
+
+.shadow {
+  text-shadow: 10px 10px 10px black;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flexgrow {
+  flex-grow: 1;
+}
+
+.slogan {
+  margin-top: 0;
+  margin-left: 5rem;
+  color: whitesmoke;
+}

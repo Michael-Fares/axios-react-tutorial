@@ -45,11 +45,16 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <h1>Beer!</h1>
-        <Link to="/">
-          <p>Go to home</p>
+      <>
+      <div className="nav-container">
+        <h1 className="title flexgrow shadow">Beer Brothers Brews</h1>  
+        <Link style={{ textDecoration: "none" }} to="/">
+          <h3 className="link shadow">Home</h3>
         </Link>
+      </div>
+      
+      <div className="flex-container">
+        
         {/* <input placeholder="search by beer name" type="text"></input> */}
         <ol>
           {this.state.arrayOfBeer.map((beer, index) => {
@@ -70,6 +75,7 @@ class App extends Component {
           })}
         </ol>
       </div>
+      </>
     );
   }
 }

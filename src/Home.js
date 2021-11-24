@@ -6,11 +6,16 @@ import './App.css'
 
 export default function Home() {
   return (
-    <div className="App"> 
-      <h1>Welcome of my beer website</h1>
-      <Link to="/app">
-        <p>Go to app</p>
+    <div className="App">
+      <div className="nav-container">
+      <div className="flexgrow">  
+          <h1 className="title shadow">Beer Brothers Brews</h1>
+          <h3 className="slogan shadow">Handcrafted beer for the people.</h3>
+      </div>
+      <Link style={{ textDecoration: "none" }} to="/app">
+        <h3 className="link shadow">Visit Store</h3>
       </Link>
+      </div> 
     </div>
   )
 }
