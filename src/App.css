@@ -8,13 +8,16 @@
 
 .heart-grey {
  color: grey;
+ transition: ease-in-out 150ms;
 }
 
 .heart-red {
   color: red;
+  transition: ease-in-out 150ms;
+  transform: scale(1.5)
 }
 
-.serif {
+.outfit {
   font-family: 'Outfit', sans-serif;
 }
 
@@ -68,4 +71,33 @@ body {
   margin-top: 0;
   margin-left: 5rem;
   color: whitesmoke;
+}
+
+.beer-card {
+  width: 60vw;
+}
+.img {
+  height: 12rem
+}
+
+@media screen and (max-width: 600px) {
+  .beer-card {
+    width: 70vw;
+    margin-right: 2.5rem;
+  }
+  .img {
+    width: 20%;
+    height: 60%;
+  }
+  .title {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+  }
+  .link {
+    font-size: 1rem;
+  }
+  .slogan {
+    font-size: 0.75rem;
+    margin-left: 1.5rem;
+  }
 }

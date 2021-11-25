@@ -53,10 +53,10 @@ class App extends Component {
         </Link>
       </div>
       
-      <div className="flex-container">
+      
         
         {/* <input placeholder="search by beer name" type="text"></input> */}
-        <ol>
+        <ol className="flex-container">
           {this.state.arrayOfBeer.map((beer, index) => {
             return (
               <BeerCard
@@ -74,7 +74,7 @@ class App extends Component {
             );
           })}
         </ol>
-      </div>
+     
       </>
     );
   }
