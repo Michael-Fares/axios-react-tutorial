@@ -14,6 +14,7 @@ class App extends Component {
     this.state = {
       arrayOfBeer: [],
       likedBeer: [],
+      search: null
     };
   }
 
@@ -43,6 +44,18 @@ class App extends Component {
     }
   };
 
+  handleSearch = (e) => {
+    e.preventDefault()
+    this.setState({search: e.target.value})
+  }
+
+  filterSearch = (term) => {
+    // returns the callback to be put into the filter method
+    return (item) => {
+      return item.name.toLowerCase().includes(term.toLowerCase())
+    }
+  }
+
   render() {
     return (
       <>
@@ -52,12 +65,16 @@ class App extends Component {
           <h3 className="link shadow">Home</h3>
         </Link>
       </div>
-      
-      
-        
-        {/* <input placeholder="search by beer name" type="text"></input> */}
+      <div className="flex-container">
+        <input className="outfit" style={{
+          marginTop: "1rem", 
+          width: "40vw",
+          fontSize: "1rem"}} 
+          placeholder="search by beer name" type="text" value={this.state.search}onChange={this.handleSearch}></input>
+      </div>
         <ol className="flex-container">
-          {this.state.arrayOfBeer.map((beer, index) => {
+          {!this.state.search ?
+          this.state.arrayOfBeer.map((beer, index) => {
             return (
               <BeerCard
                 key={index}
@@ -71,8 +88,25 @@ class App extends Component {
                 like={this.likeHandler}
                 isLiked={this.state.likedBeer.includes(index) ? true : false}
               />
-            );
-          })}
+            ) 
+          })
+          :
+          this.state.arrayOfBeer.filter(this.filterSearch(this.state.search)).map((beer, index) => {
+            return (
+              <BeerCard
+                key={index}
+                name={beer.name}
+                image_url={beer.image_url}
+                tagline={beer.tagline}
+                first_brewed={beer.first_brewed}
+                description={beer.description}
+                abv={beer.abv}
+                index={index}
+                like={this.likeHandler}
+                isLiked={this.state.likedBeer.includes(index) ? true : false}
+              />
+            ) 
+          })};
         </ol>
      
       </>
