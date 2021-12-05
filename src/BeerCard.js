@@ -12,7 +12,7 @@ function BeerCard(props) {
          backgroundColor: "wheat",
          display: "flex",
          position: "relative",
-         boxShadow: "0 0 5px 5px rgba(0,0,0,.3)"
+         boxShadow: "0 0 5px 5px rgba(255,255,255,.5)"
         }}>
            
             <img className="img" src={image_url} />
